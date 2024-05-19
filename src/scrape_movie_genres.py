@@ -4,10 +4,7 @@ import json
 
 
 def scrape_movie_genres(input, output_path):
-
-    # Read the JSON file and convert it to a Python dictionary
     
-
     movies_genre = {}
     counter = 0
     for key,value in movies_link.items():

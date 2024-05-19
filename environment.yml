@@ -1,0 +1,11 @@
+name: movierec
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - pandas
+  - seaborn
+  - bs4
+  - requests

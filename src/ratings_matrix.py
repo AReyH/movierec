@@ -45,7 +45,7 @@ def ratings_matrix(movies_genre, output_path, threshold=0.7, n_users=1000):
                     else:
                         df.loc[i,col] = round(5*np.random.beta(a=2,b=2,size=1)[0],1)
                 else:
-                    df.loc[i,col] = 0
+                    df.loc[i,col] = None
 
     df.to_csv(output_path)
 

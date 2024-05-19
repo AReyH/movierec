@@ -10,7 +10,7 @@ Clone the repository:
 
 ```bash
 
-git clone https://github.com/your-username/movie-recommendation-system.git
+git clone https://github.com/AReyH/movierec.git
 ``` 
 ### **Install the required dependencies:**
 

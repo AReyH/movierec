@@ -4,6 +4,30 @@ import random
 import json
 
 def ratings_matrix(movies_genre, output_path, threshold=0.7, n_users=1000):
+    """
+    Generates a ratings matrix based on movie genres and saves it to a CSV file.
+
+    Parameters
+    ----------
+    movies_genre : dict
+        A dictionary containing movie titles as keys and their corresponding genres as values.
+    output_path : str
+        The path where the CSV file containing the ratings matrix will be saved.
+    threshold : float, optional
+        The threshold probability for a user to watch a movie (default is 0.7).
+    n_users : int, optional
+        The number of users for which ratings are generated (default is 1000).
+
+    Returns
+    -------
+    None
+
+    Notes
+    -----
+    This function generates a ratings matrix where rows represent users and columns represent movies.
+    Ratings are based on user preferences for movie genres and are randomly assigned using a Beta distribution.
+    Users have preferences for 1 to 4 movie genres, and their ratings are biased towards those genres.
+    """
 
     # Create n_users
     unique_users = [f'user{str(i).zfill(5)}' for i in range(n_users)]

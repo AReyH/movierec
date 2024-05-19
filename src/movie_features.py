@@ -2,6 +2,26 @@ import pandas as pd
 import json
 
 def create_movie_features(movies_genre, output_path):
+    """
+    Creates a movie features DataFrame based on the provided movie genres dictionary and saves it to a CSV file.
+
+    Parameters
+    ----------
+    movies_genre : dict
+        A dictionary containing movie titles as keys and their corresponding genres as values.
+    output_path : str
+        The path where the CSV file containing movie features will be saved.
+
+    Returns
+    -------
+    None
+
+    Notes
+    -----
+    This function creates a DataFrame where each row represents a movie and each column represents a genre.
+    The value of each cell indicates whether the movie belongs to the corresponding genre (1) or not (0).
+    The genres are derived from the provided dictionary of movie genres.
+    """
 
     # Get the unique movie genres
     unique_genres = []

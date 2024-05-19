@@ -4,6 +4,25 @@ import json
 
 
 def scrape_movie_genres(input, output_path):
+    """
+    Scrapes movie genres for a given list of movie links and saves them to a JSON file.
+
+    Parameters
+    ----------
+    input : dict
+        A dictionary containing movie titles as keys and their corresponding URLs as values.
+    output_path : str
+        The path where the JSON file containing scraped movie genres will be saved.
+
+    Returns
+    -------
+    None
+
+    Notes
+    -----
+    This function scrapes movie genres from the provided list of movie links and saves them to a JSON file.
+    It searches for genre information within the JSON-LD script tag of each movie webpage.
+    """
     
     movies_genre = {}
     counter = 0

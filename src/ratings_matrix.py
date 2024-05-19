@@ -36,14 +36,24 @@ def ratings_matrix(movies_genre, output_path, threshold=0.7, n_users=1000):
                     # with alpha = 8, and b = 2, this gives it a heavy right tail meaning the score
                     # will most likely be high
                     if genre in user_genres[i]:
-                        df.loc[i,col] = round(5*np.random.beta(a=8,b=2,size=1)[0],1)
+                        # If randomly generated number is higher than 0.7, then
+                        # the user will give a movie a 5.0 rating
+                        if random.random() > 0.7:
+                            df.loc[i,col] = 5.0
+                        else:
+                            df.loc[i,col] = round(5*np.random.beta(a=8,b=2,size=1)[0],1)
                     # Otherwise, if the genre of the movie is not in the preferred user's genres,
                     # then the user will most likely give it a low score, the score will be given
                     # based on a number generated from a Beta distribution with alpha = 2 and beta = 2
                     # this gives it a bell shaped distribution where the score will be random, with
                     # high likelihood that the score will be around 2.5
                     else:
-                        df.loc[i,col] = round(5*np.random.beta(a=2,b=2,size=1)[0],1)
+                        # If a randomly generated number is higher than 0.8, then
+                        # the user will give this movie a 0.0 rating.
+                        if random.random() > 0.8:
+                            df.loc[i,col] = 0.0
+                        else:
+                            df.loc[i,col] = round(5*np.random.beta(a=2,b=2,size=1)[0],1)
                 else:
                     df.loc[i,col] = None
 

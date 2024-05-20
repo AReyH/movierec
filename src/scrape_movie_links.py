@@ -3,6 +3,27 @@ import requests
 import json
 
 def scrape_movie_links(url, output_path):
+
+    """
+    Scrapes movie links from a given URL and saves them to a JSON file.
+
+    Parameters
+    ----------
+    url : str
+        The URL of the webpage containing movie links.
+    output_path : str
+        The path where the JSON file containing scraped movie links will be saved.
+
+    Returns
+    -------
+    None
+
+    Notes
+    -----
+    This function scrapes movie links from the specified webpage and saves them to a JSON file.
+    It searches for HTML elements with class 'details' to extract movie titles and URLs.
+    """
+    
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
